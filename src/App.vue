@@ -1,32 +1,60 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="wrapper">
+    <Sidebar />
+    <main>
+      <router-view />
+    </main>
+    <Footer />
   </div>
 </template>
+<script>
+import Sidebar from "@/components/Sidebar.vue";
+import Footer from "@/components/Footer.vue";
 
+export default {
+  name: "App",
+  created() {
+    window.addEventListener("load", () =>
+      document.body.classList.add("loaded")
+    );
+  },
+  components: {
+    Sidebar,
+    Footer
+  }
+};
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;300;400;500;800&family=Noto+Sans+SC:wght@100;300;500;900&display=swap");
+
+@import "./styles/_variables.scss";
+@import "./styles/_globals.scss";
+
+#wrapper {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+}
+main {
+  padding-top: $top-padding;
+  margin: 0 $content-margin;
+  max-width: $max-content-width;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+@media only screen and (max-width: $breakpoint) {
+  #wrapper {
+    width: 95%;
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 5rem;
+  }
+  main {
+    padding-top: 0rem;
+  }
+}
+@media only screen and (max-width: $breakpoint2) {
+  #wrapper {
+    padding-top: 3rem;
   }
 }
 </style>

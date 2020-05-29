@@ -1,0 +1,19 @@
+$primary-green: #7AFF77;
+$primary-blue: #6473FF;
+$top-padding: 10vh;
+
+$text-color: #333;
+$content-margin: 5%;
+$max-content-width: 800px;
+$sidebar-content-width: 85%;
+$sidebar-max-width: 200px;
+
+$accent-color-1: rgb(223, 32, 159);
+
+$breakpoint: 840px;
+$breakpoint2: 500px;
+
+:export {
+	breapoint1: $breakpoint;
+	breakpoint2: $breakpoint2;
+}
