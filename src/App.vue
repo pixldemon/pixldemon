@@ -42,19 +42,11 @@ main {
 
 @media only screen and (max-width: $breakpoint) {
   #wrapper {
-    width: 95%;
-    max-width: $max-content-width;
-    margin: 0 auto;
-    padding: 0;
+    margin: 0;
     padding-top: 5rem;
   }
   main {
     padding-top: 0rem;
-  }
-}
-@media only screen and (max-width: $breakpoint2) {
-  #wrapper {
-    padding-top: 3rem;
   }
 }
 </style>

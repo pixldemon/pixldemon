@@ -1,13 +1,17 @@
 <template>
   <div id="sidebar" :class="{scrolled: scrolled, collapsed: collapsed}">
     <nav>
-      <div id="mobile-header" v-if="mobile">
-        <h1>
-          <span>pixl</span>demon
-        </h1>
-        <div>
-          <span id="route-name">{{routeName}}</span>
-          <button id="hamburger" @click="collapsed = !collapsed"></button>
+      <div>
+        <header>
+          <h1>
+            <span>pixl</span>demon
+          </h1>
+        </header>
+        <div id="mobile-header" v-if="mobile">
+          <div>
+            <span id="route-name">{{routeName}}</span>
+            <button id="hamburger" @click="collapsed = !collapsed"></button>
+          </div>
         </div>
       </div>
       <ul v-if="!(mobile && collapsed)" :class="{'slide-in-contents': mobile}">
@@ -48,16 +52,17 @@ export default {
     }
   },
   created() {
+    this.scrolled = document.firstElementChild.scrollTop != 0;
     window.addEventListener("scroll", evt => {
       this.scrolled = document.firstElementChild.scrollTop != 0;
     });
   },
   mounted() {
     this.mobile =
-      window.innerWidth < parseInt(variables.breakpoint2.replace("px", ""));
+      window.innerWidth <= parseInt(variables.breakpoint2.replace("px", ""));
     window.addEventListener("resize", evt => {
       this.mobile =
-        window.innerWidth < parseInt(variables.breakpoint2.replace("px", ""));
+        window.innerWidth <= parseInt(variables.breakpoint2.replace("px", ""));
     });
   }
 };
@@ -86,22 +91,40 @@ export default {
   background-color: white;
   z-index: 10;
 }
+
+header,
+ul {
+  max-width: $sidebar-content-width;
+  margin: 0 auto;
+}
+header {
+  text-align: right;
+  h1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    font-weight: 900;
+    font-size: 3rem;
+    font-weight: lighter;
+    margin: 0.4rem 0;
+    color: $accent-color-1;
+    span {
+      color: black;
+    }
+  }
+}
 ul {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 
   padding: 0;
-  margin: 0;
-
-  width: $sidebar-content-width;
-  margin: 0 auto;
 }
 
 .nav-entry {
   margin: 1.3rem 0;
   list-style: none;
-
+  white-space: nowrap;
   a {
     color: black;
     font-weight: 300;
@@ -111,7 +134,9 @@ ul {
 
     opacity: 0.8;
     &:hover,
-    &.router-link-exact-active { opacity: 1; }
+    &.router-link-exact-active {
+      opacity: 1;
+    }
 
     &::after {
       display: block;
@@ -124,10 +149,16 @@ ul {
     }
 
     &:hover::after,
-    &.router-link-exact-active::after { width: 100%; }
+    &.router-link-exact-active::after {
+      width: 100%;
+    }
 
-    &.router-link-exact-active { color: $accent-color-1 !important; }
-    &.router-link-exact-active::after { background-color: $accent-color-1; }
+    &.router-link-exact-active {
+      color: $accent-color-1 !important;
+    }
+    &.router-link-exact-active::after {
+      background-color: $accent-color-1;
+    }
   }
 }
 
@@ -135,17 +166,10 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
-  margin: 0 auto;
 
-  h1 {
-    margin: 0;
-    text-align: center;
-    font-weight: 900;
-    color: $accent-color-1;
-    span { color: black; }
+  #route-name {
+    font-size: 1.4rem;
   }
-  #route-name { font-size: 1.4rem; }
 }
 #hamburger {
   background: none;
@@ -170,8 +194,12 @@ ul {
     transition: 0.3s;
     transform-origin: 51% 51%;
   }
-  &::before { top: 1rem; }
-  &::after { bottom: 1rem; }
+  &::before {
+    top: 1rem;
+  }
+  &::after {
+    bottom: 1rem;
+  }
 }
 #sidebar:not(.collapsed) #hamburger {
   &::before {
@@ -183,39 +211,40 @@ ul {
     transform: rotate(-225deg);
   }
 }
-@media screen and (max-width: $breakpoint2) {
-  #sidebar:not(.collapsed) {
-    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
-  }
-  ul {
-    flex-direction: column !important;
-    align-items: center;
-  }
-  .nav-entry {
-    margin: 1.6rem 0 !important;
-  }
-}
-
 @media screen and (max-width: $breakpoint) {
   #sidebar {
-    width: 100vw;
-    padding: 0 $content-margin;
+    width: 100%;
     height: auto;
   }
   #sidebar {
     padding: 0.8rem 0;
   }
+  header,
+  ul {
+    max-width: $max-content-width;
+    width: auto;
+  }
+  header {
+    text-align: center;
+    padding-right: 3rem;
+    h1 {
+      font-size: 2rem;
+    }
+  }
   nav {
     max-width: $max-content-width;
     margin: 0 $content-margin;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
   }
   ul {
-    width: 95%;
+    flex: 1;
     flex-direction: row;
     justify-content: space-between;
   }
   .nav-entry {
-    margin: 0.5rem;
+    margin: 0.5rem 1rem;
     font-size: 1rem;
   }
   .nav-entry:last-child {
@@ -229,6 +258,31 @@ ul {
     #background-cover {
       opacity: 1;
     }
+  }
+}
+@media screen and (max-width: $breakpoint2) {
+  #sidebar:not(.collapsed) {
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+  nav {
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    justify-content: space-between;
+  }
+  header {
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .nav-entry {
+    margin: 1.6rem 0 !important;
   }
 }
 </style>
