@@ -43,7 +43,7 @@ main {
 @media only screen and (max-width: $breakpoint) {
   #wrapper {
     margin: 0;
-    padding-top: 5rem;
+    padding-top: 8rem;
   }
   main {
     padding-top: 0rem;
