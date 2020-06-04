@@ -296,7 +296,7 @@ ul {
     max-height: 0;
   }
   #sidebar:not(.collapsed) ul {
-    max-height: 30vh;
+    max-height: 28rem;
   }
   #sidebar.collapsed ul {
     max-height: 0;
