@@ -61,7 +61,6 @@ export default {
 
 #home-wrapper {
   width: 100%;
-  height: 100%;
   background-size: cover;
   position: relative;
 }

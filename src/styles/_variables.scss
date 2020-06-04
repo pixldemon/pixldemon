@@ -6,12 +6,13 @@ $text-color: #333;
 $content-margin: 5%;
 $max-content-width: 800px;
 $sidebar-content-width: 85%;
-$sidebar-max-width: 200px;
+$sidebar-width: 33vw;
+$sidebar-max-width: 300px;
 
 $accent-color-1: rgb(223, 32, 159);
 
 $breakpoint: 840px;
-$breakpoint2: 500px;
+$breakpoint2: 600px;
 
 :export {
 	breapoint1: $breakpoint;

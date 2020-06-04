@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar" :class="{scrolled: scrolled, collapsed: collapsed}">
+  <div id="sidebar" :class="{scrolled: scrolled, collapsed: collapsed && mobile}">
     <nav>
       <div>
         <header>
@@ -7,14 +7,14 @@
             <span>pixl</span>demon
           </h1>
         </header>
-        <div id="mobile-header" v-if="mobile">
+        <div id="mobile-header">
           <div>
             <span id="route-name">{{routeName}}</span>
             <button id="hamburger" @click="collapsed = !collapsed"></button>
           </div>
         </div>
       </div>
-      <ul v-if="!(mobile && collapsed)" :class="{'slide-in-contents': mobile}">
+      <ul>
         <li class="nav-entry">
           <router-link to="/">Home</router-link>
         </li>
@@ -70,16 +70,14 @@ export default {
 
 <style scoped lang="scss">
 @import "../styles/_variables.scss";
+@import "../styles/_globals.scss";
 
 #sidebar {
-  padding-top: $top-padding;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-
-  width: var(--sidebar-width);
-
+  align-self: flex-start;
+  position: sticky;
+  top: $top-padding;
+  width: $sidebar-width;
+  max-width: $sidebar-max-width;
   display: flex;
   flex-direction: column;
 
@@ -91,11 +89,17 @@ export default {
   background-color: white;
   z-index: 10;
 }
-
 header,
 ul {
-  max-width: $sidebar-content-width;
   margin: 0 auto;
+  max-width: $sidebar-content-width;
+}
+ul {
+  transition-timing-function: ease-in;
+  height: auto;
+}
+#sidebar:not(.collapsed) ul {
+  @extend .slide-in-contents;
 }
 header {
   text-align: right;
@@ -163,9 +167,12 @@ ul {
 }
 
 #mobile-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: none;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   #route-name {
     font-size: 1.4rem;
@@ -214,9 +221,9 @@ ul {
 @media screen and (max-width: $breakpoint) {
   #sidebar {
     width: 100%;
-    height: auto;
-  }
-  #sidebar {
+    max-width: none !important;
+    position: fixed;
+    top: 0;
     padding: 0.8rem 0;
   }
   header,
@@ -261,6 +268,9 @@ ul {
   }
 }
 @media screen and (max-width: $breakpoint2) {
+  #mobile-header {
+    display: block;
+  }
   #sidebar:not(.collapsed) {
     box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
   }
@@ -280,6 +290,16 @@ ul {
   ul {
     flex-direction: column !important;
     align-items: center;
+    flex: auto;
+    transition: .2s;
+    overflow: hidden;
+    max-height: 0;
+  }
+  #sidebar:not(.collapsed) ul {
+    max-height: 30vh;
+  }
+  #sidebar.collapsed ul {
+    max-height: 0;
   }
   .nav-entry {
     margin: 1.6rem 0 !important;

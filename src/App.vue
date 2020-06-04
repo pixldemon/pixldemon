@@ -3,8 +3,8 @@
     <Sidebar />
     <main>
       <router-view />
+      <Footer />
     </main>
-    <Footer />
   </div>
 </template>
 <script>
@@ -31,8 +31,8 @@ export default {
 @import "./styles/_globals.scss";
 
 #wrapper {
-  margin-left: var(--sidebar-width);
   min-height: 100vh;
+  display: flex;
 }
 main {
   padding-top: $top-padding;

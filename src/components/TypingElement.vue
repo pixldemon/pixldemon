@@ -9,6 +9,7 @@
 export default {
   name: "TypingElement",
   created() {
+    this.phraseIndex = Math.floor((this.phrases.length - 1) * Math.random())
     this.write();
   },
   methods: {
