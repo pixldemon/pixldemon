@@ -35,11 +35,11 @@ button {
 	position: relative;
 	cursor: pointer;
 
-	transition: box-shadow .2s;
-	transition: transform .4s;
+	transition: .3s;
+
 	&:hover {
 		box-shadow: 0px 2px 7px 0px rgba(206, 34, 154, 0.5);
-		transform: translateY(1px);
+		transform: translateX(2px);
 	}
 
 	&::after {

@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       minDelay: 30,
-      maxDelay: 70,
+      maxDelay: 50,
       phraseIndex: 0,
       charIndex: 0,
       currentText: "",
@@ -51,12 +51,15 @@ export default {
         "video games.",
         "creating video games.",
         "Linux.",
-        "writing Python.",
-        "writing JavaScript.",
+        "Python.",
+        "JavaScript.",
         "Vue.js.",
         "everything tech.",
         "scuba diving.",
-        "playing tennis."
+        "computer hardware.",
+        "tennis.",
+        "solving problems.",
+        "what little C++ I know."
       ]
     };
   }
