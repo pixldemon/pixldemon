@@ -1,13 +1,25 @@
 <template>
   <div id="home-wrapper">
-    <div class="slide-in-contents" id="home-content-wrapper">
-      <h1>Who am I?</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde voluptas quos veniam a nisi velit! Molestias pariatur quasi incidunt cupiditate veritatis.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde voluptas quos veniam a nisi velit! Molestias pariatur quasi incidunt cupiditate veritatis.</p>
-      <TypingElement />
+    <div class="slide-in-contents page-content" id="home-content-wrapper">
+      <h1>Hello there!</h1>
+      <p>
+        My name is Moritz. I’m a german tech enthusiast in my teens.
+        Since I fell in love with computers and programming a few years ago, I have tried to learn that I can
+        about a variety of topics related to computer science and software engineering.
+        My goal with this site is to provide an overview of who I am and what I do.
+      </p>
+      <p>
+        I do some web development on the side, so if you like what you see and need a website done,
+        or are interested in potentially collaborating, just shoot me an email or a DM! I’m always happy to get to know new people.
+      </p>
       <div class="container">
         <PrimaryButton label="Take a Look at My Work!" @click="$router.push('portfolio')" />
       </div>
+      <p>
+        Right now, I'm somewhat busy working on
+        <a href="https://votyvote.com/">VotyVote</a>, an awesome online polling platform,
+        which means I will not be able to take on larger projects.
+      </p>
       <h2>My Arsenal</h2>
       <div id="stack-wrapper">
         <div id="stack">
@@ -20,8 +32,15 @@
           </div>
         </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde voluptas quos veniam a nisi velit! Molestias pariatur quasi incidunt cupiditate veritatis.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde voluptas quos veniam a nisi velit! Molestias pariatur quasi incidunt cupiditate veritatis.</p>
+      <p>
+        Those are my preferred tools for pretty much anything webdev.
+        With the exception of databases, I've gone through a variety of solutions for all these areas, and eventually settled on this stack.
+      </p>
+      <p>
+        I've also begun developing my own front-end framework,
+        <a href="https://github.com/pixldemon/visiejs">visiejs</a>, but that's more of an experiment that an attempt
+        to create something useful in practice. It certainly does work though, check it out.
+      </p>
     </div>
   </div>
 </template>
@@ -65,21 +84,7 @@ export default {
 
 #home-wrapper {
   width: 100%;
-  background-size: cover;
   position: relative;
-}
-#home-content-wrapper {
-  h1 {
-    line-height: 1;
-    font-weight: 900;
-    margin: 1.3rem 0;
-    font-size: 3rem;
-  }
-  p {
-    font-weight: 300;
-    line-height: 2.4rem;
-    color: $text-color;
-  }
 }
 
 hr {
