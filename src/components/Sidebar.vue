@@ -7,7 +7,7 @@
             <span>pixl</span>demon
           </h1>
         </header>
-        <div id="mobile-header">
+        <div id="hamburger-menu">
           <div>
             <span id="route-name">{{routeName}}</span>
             <button id="hamburger" @click="collapsed = !collapsed"></button>
@@ -166,7 +166,7 @@ ul {
   }
 }
 
-#mobile-header {
+#hamburger-menu {
   display: none;
   div {
     display: flex;
@@ -268,7 +268,7 @@ ul {
   }
 }
 @media screen and (max-width: $breakpoint2) {
-  #mobile-header {
+  #hamburger-menu {
     display: block;
   }
   #sidebar:not(.collapsed) {
