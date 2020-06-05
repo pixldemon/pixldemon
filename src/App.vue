@@ -38,6 +38,7 @@ main {
   padding-top: $top-padding;
   margin: 0 $content-margin;
   max-width: $max-content-width;
+  width: 100%;
 }
 
 @media only screen and (max-width: $breakpoint) {
