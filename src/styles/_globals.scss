@@ -33,25 +33,8 @@ body:not(.loaded) > * {
     }
 }
 
-.btn-primary {
-    outline: none;
-    border: none;
-    background: none;
-    display: block;
-    width: auto;
-
-    padding: 0 3rem;
-    line-height: 4rem;
-    font-size: 1.4rem;
-    background-color: white;
-    border-radius: 9999px;
-
-    color: $primary-green;
-    box-shadow: 0px 7px 4px -8px rgba(0, 0, 0, 0.75);
-
-    cursor: pointer;
-    
-    white-space: nowrap;
+.container {
+    margin: 2.5rem 0;
 }
 
 @keyframes slideIn {

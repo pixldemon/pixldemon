@@ -5,7 +5,9 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde voluptas quos veniam a nisi velit! Molestias pariatur quasi incidunt cupiditate veritatis.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde voluptas quos veniam a nisi velit! Molestias pariatur quasi incidunt cupiditate veritatis.</p>
       <TypingElement />
-      <hr />
+      <div class="container">
+        <PrimaryButton label="Take a Look at My Work!" @click="$router.push('portfolio')" />
+      </div>
       <h2>My Arsenal</h2>
       <div id="stack-wrapper">
         <div id="stack">
@@ -26,11 +28,13 @@
 
 <script>
 import TypingElement from "@/components/TypingElement";
+import PrimaryButton from "@/components/PrimaryButton";
 
 export default {
   name: "Home",
   components: {
-    TypingElement
+    TypingElement,
+    PrimaryButton
   },
   data() {
     return {
