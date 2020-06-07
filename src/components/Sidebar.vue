@@ -31,6 +31,7 @@ export default {
   data() {
     return {
       scrolled: false,
+      scrollThreshold: 5,
       mobile: false,
       collapsed: true,
       routeName: this.$route.name,
@@ -61,9 +62,9 @@ export default {
     }
   },
   created() {
-    this.scrolled = document.firstElementChild.scrollTop != 0;
+    this.scrolled = document.firstElementChild.scrollTop > this.scrollThreshold;
     window.addEventListener("scroll", evt => {
-      this.scrolled = document.firstElementChild.scrollTop != 0;
+      this.scrolled = document.firstElementChild.scrollTop > this.scrollThreshold;
     });
   },
   mounted() {

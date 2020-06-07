@@ -38,7 +38,7 @@ button {
 	transition: .3s;
 
 	&:hover {
-		box-shadow: 0px 2px 7px 0px rgba(206, 34, 154, 0.5);
+		box-shadow: 0px 2px 7px 0px rgba($accent-color-1, 0.5);
 		transform: translateX(2px);
 	}
 
