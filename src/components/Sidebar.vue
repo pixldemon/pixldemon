@@ -14,18 +14,9 @@
           </div>
         </div>
       </div>
-      <ul>
-        <li class="nav-entry">
-          <router-link to="/">Home</router-link>
-        </li>
-        <li class="nav-entry">
-          <router-link to="/about">About Me</router-link>
-        </li>
-        <li class="nav-entry">
-          <router-link to="/portfolio">Portfolio</router-link>
-        </li>
-        <li class="nav-entry">
-          <router-link to="/contact">Contact</router-link>
+      <ul :class="{'slide-in-contents': mobile && !collapsed}">
+        <li class="nav-entry" v-for="route in routes" :key="route.name">
+          <router-link :to="route.path">{{route.name}}</router-link>
         </li>
       </ul>
     </nav>
@@ -42,7 +33,25 @@ export default {
       scrolled: false,
       mobile: false,
       collapsed: true,
-      routeName: this.$route.name
+      routeName: this.$route.name,
+      routes: [
+        {
+          name: "Home",
+          path: "/"
+        },
+        {
+          name: "About Me",
+          path: "/about"
+        },
+        {
+          name: "Portfolio",
+          path: "/portfolio"
+        },
+        {
+          name: "Contact",
+          path: "/contact"
+        }
+      ]
     };
   },
   watch: {
@@ -97,9 +106,6 @@ ul {
 ul {
   transition-timing-function: ease-in;
   height: auto;
-}
-#sidebar:not(.collapsed) ul {
-  @extend .slide-in-contents;
 }
 header {
   text-align: right;
