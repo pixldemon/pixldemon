@@ -29,9 +29,9 @@ body {
 	position: relative;
 	font-family: "Noto Sans SC", sans-serif;
 	overflow-anchor: none;
-	// In chrome, pseudo-elements can be blurry when there is no vertical overflow and no transform is being transitioned anywhere on the page. Thus, bottom margin to force overflow.
+	// In chrome, pseudo-elements can be blurry when there is no vertical overflow and no transform is being transitioned anywhere on the page. To fix, force overflow.
 	// Don't ask.
-	margin-bottom: 1px;
+	min-height: calc(100vh + 1px);
 }
 body:not(.loaded) > * {
 	opacity: 0 !important;

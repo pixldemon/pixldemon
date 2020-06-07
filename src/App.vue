@@ -31,7 +31,6 @@ export default {
 @import "./styles/_globals.scss";
 
 #wrapper {
-  min-height: 100vh;
   display: flex;
 }
 main {
