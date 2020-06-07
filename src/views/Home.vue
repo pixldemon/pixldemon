@@ -1,16 +1,18 @@
 <template>
   <div id="home-wrapper">
     <div class="slide-in-contents page-content" id="home-content-wrapper">
-      <h1>Hello there!</h1>
+      <h1>Hello There!</h1>
       <p>
         My name is Moritz. I’m a german tech enthusiast in my teens.
         Since I fell in love with computers and programming a few years ago, I have tried to learn that I can
         about a variety of topics related to computer science and software engineering.
-        My goal with this site is to provide an overview of who I am and what I do.
+      </p>
+      <p>
+        The goal of this site is to catalog my development journey, but also to motivate myself to create more cool stuff to put on here.
       </p>
       <p>
         I do some web development on the side, so if you like what you see and need a website done,
-        or are interested in potentially collaborating, just shoot me an email or a DM! I’m always happy to get to know new people.
+        or are interested in potentially collaborating, just shoot me an email or a DM! No commitments. I’m always happy to get to know new people.
       </p>
       <div class="container">
         <PrimaryButton label="Take a Look at My Work!" @click="$router.push('portfolio')" />
@@ -34,7 +36,7 @@
       </div>
       <p>
         Those are my preferred tools for pretty much anything webdev.
-        With the exception of databases, I've gone through a variety of solutions for all these areas, and eventually settled on this stack.
+        With the exception of data storage, I've gone through a bunch of different solutions each, and eventually settled on this stack.
       </p>
       <p>
         I've also begun developing my own front-end framework,
