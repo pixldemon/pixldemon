@@ -1,2 +1,2 @@
-# Redirection rules for Netlify
+# Redirection rules for Netlify. Necessary when deploying SPA
 /* /index.html 200
