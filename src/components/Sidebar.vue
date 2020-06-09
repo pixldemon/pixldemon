@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar" :class="{scrolled: scrolled, collapsed: collapsed && mobile}">
+  <div id="sidebar" :class="{scrolled: scrolled, collapsed: collapsed}">
     <nav>
       <div>
         <header>
@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      <ul :class="{'slide-in-contents': mobile && !collapsed}">
+      <ul :class="{'slide-in-contents': !collapsed}">
         <li class="nav-entry" v-for="route in routes" :key="route.name">
           <router-link :to="route.path">{{route.name}}</router-link>
         </li>
@@ -32,8 +32,7 @@ export default {
     return {
       scrolled: false,
       scrollThreshold: 5,
-      mobile: false,
-      collapsed: true,
+      collapsed: false,
       routeName: this.$route.name,
       routes: [
         {
@@ -59,21 +58,15 @@ export default {
     $route(to, from) {
       this.collapsed = true;
       this.routeName = this.$route.name;
+      window.scrollTo(0, 0);
     }
   },
   created() {
-    this.scrolled = document.firstElementChild.scrollTop > this.scrollThreshold;
-    window.addEventListener("scroll", evt => {
-      this.scrolled = document.firstElementChild.scrollTop > this.scrollThreshold;
-    });
-  },
-  mounted() {
-    this.mobile =
-      window.innerWidth <= parseInt(variables.breakpoint2.replace("px", ""));
-    window.addEventListener("resize", evt => {
-      this.mobile =
-        window.innerWidth <= parseInt(variables.breakpoint2.replace("px", ""));
-    });
+    const func = () =>
+      (this.scrolled =
+        document.firstElementChild.scrollTop > this.scrollThreshold);
+    window.addEventListener("scroll", func);
+    func();
   }
 };
 </script>
@@ -298,7 +291,7 @@ ul {
     flex-direction: column !important;
     align-items: center;
     flex: auto;
-    transition: .2s;
+    transition: 0.2s;
     overflow: hidden;
     max-height: 0;
   }
