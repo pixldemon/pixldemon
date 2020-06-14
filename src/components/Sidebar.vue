@@ -32,7 +32,7 @@ export default {
     return {
       scrolled: false,
       scrollThreshold: 5,
-      collapsed: false,
+      collapsed: true,
       routeName: this.$route.name,
       routes: [
         {
@@ -189,6 +189,8 @@ ul {
   box-sizing: content-box;
   margin: 0;
   margin-right: -1rem;
+
+  cursor: pointer;
 
   &::before,
   &::after {

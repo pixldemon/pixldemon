@@ -62,4 +62,10 @@ button {
 		clip-path: inset(-1px -1px -1px -1px);
 	}
 }
+
+@media only screen and (max-width: $breakpoint2) {
+	button, button::after {
+		width: 100%;
+	}
+}
 </style>

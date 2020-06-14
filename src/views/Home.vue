@@ -10,17 +10,16 @@
       <p>
         The goal of this site is to catalog my development journey, but also to motivate myself to create more cool stuff to put on here.
       </p>
-      <p>
+      <!-- <p>
         I do some web development on the side, so if you like what you see and need a website done,
         or are interested in potentially collaborating, just shoot me an email or a DM! No commitments. I’m always happy to get to know new people.
-      </p>
+      </p> -->
       <div class="container">
         <PrimaryButton label="Take a Look at My Work!" @click="$router.push('portfolio')" />
       </div>
       <p>
-        Right now, I'm somewhat busy working on
-        <a href="https://votyvote.com/">VotyVote</a>, an awesome online polling platform,
-        which means I will not be able to take on larger projects.
+        Right now, I'm working on the front end of
+        <a href="https://votyvote.com/">VotyVote</a>, an awesome online polling platform.
       </p>
       <h2>My Arsenal</h2>
       <div id="stack-wrapper">
@@ -41,7 +40,8 @@
       <p>
         I've also begun developing my own front-end framework,
         <a href="https://github.com/pixldemon/visiejs">visiejs</a>, but that's more of an experiment that an attempt
-        to create something useful in practice. It certainly does work though, check it out.
+        to create something useful in practice. I'm pretty much completely rewriting it, which is why the repo is private,
+        but it should be ready to go public again soon.
       </p>
     </div>
   </div>
@@ -63,17 +63,17 @@ export default {
         {
           icon: "/assets/vue.png",
           title: "Vue.js",
-          description: "For lightning fast, responsive UI"
+          description: "For lightning fast, dynamic UI"
         },
         {
           icon: "/assets/flask.png",
           title: "Flask",
-          description: "For a reliable, infinitely extendable back end"
+          description: "For an infinitely extendable back end"
         },
         {
           icon: "/assets/sqlite.png",
           title: "SQLite",
-          description: "For fast, safe storage of data"
+          description: "For safe & fast storage of data"
         }
       ]
     };

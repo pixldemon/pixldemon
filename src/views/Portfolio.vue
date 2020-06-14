@@ -115,9 +115,6 @@ main {
       margin: 0 -1rem;
     }
     .links {
-      display: flex;
-			justify-content: center;
-			margin: 0 auto;
       a {
         font-size: 0.9em;
 			}
