@@ -4,7 +4,7 @@
       <h1>Hello There!</h1>
       <p>
         My name is Moritz. I’m a german tech enthusiast in my teens.
-        Since I fell in love with computers and programming a few years ago, I have tried to learn that I can
+        Since I fell in love with computers and programming a few years ago, I have tried to learn all that I can
         about a variety of topics related to computer science and software engineering.
       </p>
       <p>
