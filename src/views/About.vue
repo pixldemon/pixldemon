@@ -1,10 +1,8 @@
 <template>
   <div id="about-wrapper" class="slide-in-contents page-content">
     <h1>Who Am I?</h1>
-    <div class="container">
-      <img src="/assets/pic.png" id="portrait" />
-    </div>
     <p>
+      <img src="/assets/pic.jpg" id="portrait" title="Me :)" />
       I'm currently in high school and will be for another two years.
       Once I graduate, I plan to spend at least a year or two in a foreign country, probably Canada, travelling and getting to know new people.
       Maybe I'll try to get a scholarship and study abroad, too. In any case, I want to study some combination of computer science, software
@@ -41,10 +39,20 @@ export default {
 
 #portrait {
   max-height: 50vh;
+  max-width: 40%;
   border-radius: 4px;
   height: auto;
+  float: right;
+  margin-left: 3rem;
 }
 
+@media only screen and (max-width: 1080px) {
+  #portrait {
+    float: none;
+    margin: 0;
+    max-width: none;
+  }
+}
 @media only screen and (max-width: $breakpoint2) {
   #portrait {
     max-height: none;

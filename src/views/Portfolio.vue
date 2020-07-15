@@ -100,7 +100,6 @@ main {
   justify-items: space-between;
   grid-template-columns: repeat(auto-fill, minmax(250px, auto));
   .item {
-    // box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.17);
     padding: 1rem;
     border-radius: 0px;
     min-height: 300px;
