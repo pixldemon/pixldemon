@@ -1,5 +1,5 @@
 # Hello There!
-I am Moritz, a teenage tech enthusiast. Since I fell in love with computers and programming a few years ago, I have attempted to learn as much as I can about a variety of topics related to computer science and software engineering, primarily web and game development. I have an unhealthy obsession with doing things from the ground up and understanding the tech I use, which is why I made my own game engines and why I am currently developing my own frontend framework, visiejs.
+I'm Moritz, a teenage tech enthusiast from Germany. Since I fell in love with computers and programming a few years ago, I have attempted to learn as much as I can about a variety of topics related to computer science and software engineering, primarily web and game development. I have an unhealthy obsession with doing things from the ground up and understanding the tech I use, which is why I made my own game engines and why I am currently developing my own frontend framework, visiejs.
 
 ## I Love...
 - Webdev (obviously)
