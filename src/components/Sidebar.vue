@@ -10,7 +10,7 @@
         <div id="hamburger-menu">
           <div>
             <span id="route-name">{{routeName}}</span>
-            <button id="hamburger" @click="collapsed = !collapsed"></button>
+            <button aria-label="hamburger menu" id="hamburger" @click="collapsed = !collapsed"></button>
           </div>
         </div>
       </div>

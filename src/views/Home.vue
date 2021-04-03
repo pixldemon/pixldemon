@@ -25,9 +25,9 @@
       <div id="stack-wrapper">
         <div id="stack">
           <div class="stack-item" v-for="item in items" :key="item.title">
-            <img :src="item.icon" />
+            <img :src="item.icon" :alt="item.title" />
             <div>
-              <h4>{{ item.title }}</h4>
+              <h3>{{ item.title }}</h3>
               <p>{{ item.description }}</p>
             </div>
           </div>
@@ -114,7 +114,7 @@ hr {
     margin-bottom: 1rem;
   }
   p,
-  h4 {
+  h3 {
     margin: 0.3rem 0;
     text-align: center;
   }

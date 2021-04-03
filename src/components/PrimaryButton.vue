@@ -1,6 +1,6 @@
 <template>
 	<div class="button-wrapper">
-		<button :style="cssVars" @click="$emit('click')">{{ label }}</button>
+		<button :aria-label="label" :style="cssVars" @click="$emit('click')">{{ label }}</button>
 	</div>
 </template>
 
